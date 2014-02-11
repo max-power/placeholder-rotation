@@ -20,7 +20,6 @@
     background:#c0c0c0;
     padding:3em 5em;
   }
-
   input {
     -webkit-appearance:none;
     -webkit-box-sizing:border-box;
@@ -75,8 +74,6 @@
     color: #999;
   }
   </style>
-
-</style>
 </head>
 <body>
 
@@ -84,10 +81,13 @@
   <h1>Placeholder<br>Rotation</h1>      
 
   <form>
+    
     <input type="text" id="search" data-terms="Ruby,Perl,Python,Scala,Go,Smalltalk,C,Objective-C,Rust" data-template="Looking for {term} programmers?" data-delay="250">
+
   </form>
   
   <article>
+    
     <pre>
 new PlaceholderRotation(document.getElementById('search'), {
   terms: ['Ruby', 'Python', 'Scala', 'Go', 'Smalltalk'],
@@ -106,6 +106,7 @@ new PlaceholderRotation(document.getElementById('search'), {
     </pre>
     
     <p>You can use the following attributes:</p>
+    
     <dl>
       <dt><code>terms</code></dt>
       <dd>Array</dd>
@@ -123,11 +124,13 @@ new PlaceholderRotation(document.getElementById('search'), {
       <dt><code>index</code></dt>
       <dd>Integer, Index of the first element to show</dd>
       <dd class="ex">default: <code>0</code></dd>
+    </dl>
+    
   </article>
   
-
   <script type="text/javascript" charset="utf-8">
-  new PlaceholderRotation(document.getElementById('search'))
+    new PlaceholderRotation(document.getElementById('search'))
   </script>
+  
 </body>
 </html>
