@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Placeholder Rotator</title>
+  <script src="placeholder_rotation.js" type="text/javascript"></script>
+  <style type="text/css" media="screen">
+  body {
+    background:#f0f0f0;
+    font-family: AvenirNext, 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+    font-weight:400;
+    font-size:18px;
+  }
+  body, form, article {
+    margin:0;
+    padding:0;
+    
+  }
+  form {
+    background:#c0c0c0;
+    padding:3em 5em;
+  }
+
+  input {
+    -webkit-appearance:none;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    background: #fdfdfd;
+    border:0;
+    border-radius:3px;
+    color: #111111;
+    font-size: 1.5em;
+    font-weight: 300;
+    padding:1em;
+    margin:1em 0;
+    width:100%;
+  }
+  input:focus {
+    box-shadow: 0 0 0 3px #00beff;
+    color: #00beff;
+    outline:none;
+  }
+  h1 {
+    font-size:2.5em;
+    font-weight:100;
+    text-align:center;
+    text-transform:uppercase;
+    margin: 2em 0;
+  }
+  h1:before,
+  h1:after {
+    content:'';
+    display:block;
+    margin: 0.5em auto;
+    width:5em;
+    height:2px;
+    background:#00beff;
+  }
+  h2 {
+    font-weight:400;
+  }
+  article {
+    max-width:40em;
+    margin: 3em auto;
+  }
+  pre, code {
+    font-family: Menlo, "Lucida Console", Monaco, "Courier New", monospace;
+  }
+  pre {
+    line-height:1.4;
+    color: #00beff;
+  }
+  .ex { 
+    color: #999;
+  }
+  </style>
+
+</style>
+</head>
+<body>
+
+
+  <h1>Placeholder<br>Rotation</h1>      
+
+  <form>
+    <input type="text" id="search" data-terms="Ruby,Perl,Python,Scala,Go,Smalltalk,C,Objective-C,Rust" data-template="Looking for {term}?" data-delay="250">
+  </form>
+  
+  <article>
+    <pre>
+new PlaceholderRotation(document.getElementById('search'), {
+  terms: ['Ruby', 'Python', 'Scala', 'Go', 'Smalltalk'],
+  template: 'Are you looking for {term}?',
+  delay: 250
+})
+    </pre>
+
+    <p>or use HTML5 Data Attributes:</p>
+    
+    <pre>
+&lt;input id="s" type="text" data-terms="Javascript,Madness" data-delay="1000"&gt;
+&lt;script&gt;
+  new PlaceholderRotation(document.getElementById('s'))   
+&lt;/script&gt;
+    </pre>
+    
+    <p>You can use the following attributes:</p>
+    <dl>
+      <dt><code>terms</code></dt>
+      <dd>Array</dd>
+      <dd>String (seperated with comma) for <code>data-terms</code></dd>
+      <dd class="ex">default: <code>["something"]</code></dd>
+    
+      <dt><code>template</code></dt>
+      <dd>String (must include <code>{term}</code>)</dd>
+      <dd class="ex">default: <code>"Search for {term}"</code></dd>
+    
+      <dt><code>delay</code></dt>
+      <dd>Integer (in milliseconds)</dd>
+      <dd class="ex">default: <code>1000</code></dd>
+      
+      <dt><code>index</code></dt>
+      <dd>Integer, Index of the first element to show</dd>
+      <dd class="ex">default: <code>0</code></dd>
+  </article>
+  
+
+  <script type="text/javascript" charset="utf-8">
+  new PlaceholderRotation(document.getElementById('search'))
+  </script>
+</body>
+</html>
