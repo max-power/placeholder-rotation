@@ -29,6 +29,6 @@ PlaceholderRotation.prototype.stop = function() {
 
 PlaceholderRotation.prototype.place = function() {
   this.el.setAttribute('placeholder', this.template.replace('{term}', this.terms[this.index]))
-  this.index=(this.index+1)%this.terms.length
+  this.index=++this.index%this.terms.length
   return this
 }
